@@ -1,0 +1,44 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,700;1,500&display=swap');
+
+// ************* COLOR VARIABLES ******************//
+// PRIMARY
+$Cyan: hsl(180, 66%, 49%);
+$Dark-Violet: hsl(257, 27%, 26%);
+// SECONDARY
+$Red: hsl(0, 87%, 67%);
+// NEUTRAL
+$Gray: hsl(0, 0%, 75%);
+$Grayish-Violet: hsl(257, 7%, 63%);
+$Very-Dark-Blue: hsl(255, 11%, 22%);
+$Very-Dark-Violet: hsl(260, 8%, 14%);
+
+//////////////////// DEFAULT/DESKTOP VIEW ///////////
+body {
+    font: {
+        size: 16px; // 1em
+        family: 'Poppins', sans-serif;
+        weight: 500;
+    }
+}
+
+footer {
+    display: flex;
+
+    & div {
+        flex-flow: column wrap;
+    }
+}
+
+.button {
+    background-color: $Cyan;
+    color: hotpink;
+}
+
+//////////////////// MOBILE VIEW ////////////////////
+@media screen and (max-width: 375px) {
+    .button {
+        background-color: $Cyan;
+        border-radius: 25%;
+        color: hotpink;
+    }
+}

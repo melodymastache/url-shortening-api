@@ -1,0 +1,19 @@
+{
+  "name": "url-shortening-api",
+  "version": "1.0.0",
+  "description": "- Further knowledge in CSS/Sass, reduce style redundancies - Review and practice API knowledge - Practive and further knowledge in JS - Implement promises",
+  "main": "index.js",
+  "scripts": {
+    "test": "npm test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/melodymastache/url-shortening-api.git"
+  },
+  "author": "Melody Mastache",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/melodymastache/url-shortening-api/issues"
+  },
+  "homepage": "https://github.com/melodymastache/url-shortening-api#readme"
+}
