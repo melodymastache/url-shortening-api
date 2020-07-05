@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,700;1,500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700&display=swap');
 
 // ************* COLOR VARIABLES ******************//
 // PRIMARY
@@ -12,33 +12,218 @@ $Grayish-Violet: hsl(257, 7%, 63%);
 $Very-Dark-Blue: hsl(255, 11%, 22%);
 $Very-Dark-Violet: hsl(260, 8%, 14%);
 
+/////////////////// MIX INS //////////////////
+@mixin button {
+    display: inline-block; // div no wider than containing font
+    background-color: $Cyan;         
+    padding: 1em 2em;
+    font-weight: 700;
+}
+
 //////////////////// DEFAULT/DESKTOP VIEW ///////////
-body {
-    font: {
-        size: 16px; // 1em
-        family: 'Poppins', sans-serif;
-        weight: 500;
-    }
+// desktop width
+@media screen and (max-width: 1440px) {
 }
 
-footer {
-    display: flex;
-
-    & div {
-        flex-flow: column wrap;
-    }
-}
-
-.button {
-    background-color: $Cyan;
-    color: hotpink;
-}
-
+// - Mobile: 375px
+// - Desktop: 1440px
 //////////////////// MOBILE VIEW ////////////////////
 @media screen and (max-width: 375px) {
-    .button {
-        background-color: $Cyan;
-        border-radius: 25%;
-        color: hotpink;
+    body {
+        margin: 0 auto;
+        box-sizing: border-box;
+        background-color: $Gray;
+
+        & a {
+            text-decoration: none;
+        }
+
+        font: {
+            size: 18px; // 1em
+            family: "Poppins", sans-serif;
+            weight: 300;
+        }
+    }
+
+    .navbox {
+        display: flex;
+    }
+
+    .text {
+        text-align: center;
+        margin: 0em 1em;
+
+        & h2 {
+            font-size: 2rem;
+        }
+
+        & p {
+            line-height: 2rem;
+            padding: 0em 2em;
+        }
+    }
+
+    .working-gal {
+        margin-left: 1em;
+        overflow: hidden;
+        width: 100%;
+    }
+
+    .shorten {
+        margin: 2em;
+        text-align: center;
+        padding: 2em;
+        border-radius: 20px;
+
+        background: {
+            image: url(./images/bg-shorten-mobile.svg);
+            repeat: no-repeat;
+            color: $Dark-Violet;
+            size: 20em;
+        }
+
+        // text box
+        & form input {
+            border-radius: 10px;
+            padding: 1em;
+
+            font: {
+                size: 1em;
+                color: $Grayish-Violet;
+                weight: 600;
+            }
+        }
+
+        // shorten it button
+        & form div {
+            @include button;
+            border-radius: 10px;
+            color: white;
+            font-weight: 800;
+        }
+    }
+
+    ///////////////// FEATURE SECTION /////////////////
+    .feature {
+        text-align: center;
+        border-radius: 5px; // rounded edges of feature box
+        margin: 0em 1.5em;
+        padding: 2em 1em;
+        background-color: white;
+
+        font: {
+            weight: 500;
+        }
+
+        & h2 {
+            font-size: 1.5rem;
+            color: $Very-Dark-Blue;
+        }
+
+        & p {
+            font-size: 1rem;
+            line-height: 1.6rem; // distance between lines of text
+            color: $Grayish-Violet;
+        }
+    }
+
+    .feature-icon {
+        background: {
+            repeat: no-repeat;
+            position: center;
+            color: $Dark-Violet;
+        }
+
+        display: inline-block;
+        position: static;
+        margin: -2em auto 2em;
+        border-radius: 50%; // full circle
+        padding: 2.5em; // between img and enclosing div
+        transform: translate(159%, 4.7em);
+    }
+
+    #brand-icon {
+        background-image: url(./images/icon-brand-recognition.svg);
+    }
+
+    #records-icon {
+        background-image: url(./images/icon-detailed-records.svg);
+    }
+
+    #custom-icon {
+        background-image: url(./images/icon-fully-customizable.svg);
+    }
+
+    .line {
+        border: 5px solid $Cyan;
+        height: 100vh;
+        // z-index + absolute position allows overlapping elements
+        z-index: -1;
+        position: absolute;
+        transform: translateX(49vw);
+    }
+    ///////////////// END FEATURE SECTION ////////////////
+
+    .boost-container {
+        margin-top: 4em;
+        color: white;
+        text-align: center;
+        padding: {
+            top: 4em;
+            bottom: 4em;
+        }
+
+        background: {
+            image: url(./images/bg-boost-mobile.svg);
+            repeat: no-repeat;
+            color: $Dark-Violet;
+        }
+
+        .button {
+            @include button;
+            border-radius: 30px; // rounded sides only, not rounding top and bottom as well.
+            color: white;
+        }
+    }
+
+    footer {
+        background-color: $Very-Dark-Violet;
+        padding: 2em;
+        text-align: center;
+
+        .logo {
+            margin: 1em auto;
+
+            & svg path {
+                fill: white; // color of logo
+            }
+        }
+
+        .links {
+            display: flex;
+            flex-flow: column wrap; // places links on top of one another
+
+            & h2 {
+                color: white;
+                padding-top: 1em; // space between feature sections
+                font-size: 1rem; // resizing headings to appropriate size
+            }
+
+            & a {
+                padding: 0.5em; // space between links
+                color: $Gray;
+            }
+        }
+
+        .socials {
+            margin: 2em;
+            display: flex;
+            justify-content: center;
+
+            & div {
+                flex-flow: row;
+                padding: 0.5em; // space between icons
+            }
+        }
     }
 }
