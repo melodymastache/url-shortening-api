@@ -4,6 +4,6 @@
 - Practice and further knowledge in JS
 - Implement promises
 
-## Frontend Mentor - Shortly URL shortening API Challenge
+## Frontend Mentor - Shortly API Challenge
 
 ![Design preview for the Shortly URL shortening API coding challenge](./design/desktop-preview.jpg)
