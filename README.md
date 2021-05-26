@@ -1,9 +1,8 @@
 # Goals for this Project
 - Further knowledge in CSS/Sass, reduce style redundancies
 - Review and practice API knowledge
-- Practive and further knowledge in JS
+- Practice and further knowledge in JS
 - Implement promises
-
 
 ## Frontend Mentor - Shortly URL shortening API Challenge
 

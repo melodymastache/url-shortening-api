@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap");
 
 // ************* COLOR VARIABLES ******************//
 // PRIMARY
@@ -7,6 +7,7 @@ $Dark-Violet: hsl(257, 27%, 26%);
 // SECONDARY
 $Red: hsl(0, 87%, 67%);
 // NEUTRAL
+$BG-COLOUR: #e4ede6; // had to find this myself
 $Gray: hsl(0, 0%, 75%);
 $Grayish-Violet: hsl(257, 7%, 63%);
 $Very-Dark-Blue: hsl(255, 11%, 22%);
@@ -14,92 +15,165 @@ $Very-Dark-Violet: hsl(260, 8%, 14%);
 
 /////////////////// MIX INS //////////////////
 @mixin button {
-    display: inline-block; // div no wider than containing font
-    background-color: $Cyan;         
+    background-color: $Cyan;
     padding: 1em 2em;
     font-weight: 700;
 }
 
+@mixin text {
+    color: $Grayish-Violet;
+    line-height: 1.6rem; // distance between lines of text
+    font-weight: 500;
+    font-size: 1rem;
+}
+
+@mixin heading {
+    color: $Very-Dark-Blue;
+
+    font: {
+        size: 2rem;
+        weight: 700;
+    }
+}
+
+body {
+    margin: 0 auto;
+    box-sizing: border-box;
+    background-color: $BG-COLOUR;
+
+    & a {
+        text-decoration: none;
+    }
+
+    font: {
+        size: 18px; // 1em
+        family: "Poppins", sans-serif;
+        weight: 500;
+    }
+}
+
 //////////////////// DEFAULT/DESKTOP VIEW ///////////
-// desktop width
 @media screen and (max-width: 1440px) {
 }
 
-// - Mobile: 375px
-// - Desktop: 1440px
 //////////////////// MOBILE VIEW ////////////////////
 @media screen and (max-width: 375px) {
-    body {
-        margin: 0 auto;
-        box-sizing: border-box;
-        background-color: $Gray;
+    // repeated style
+    .button {
+        @include button;
+        display: inline-block; // div no wider than containing font
+        border-radius: 30px; // rounded sides only, not rounding top and bottom as well.
+        color: white;
+    }
 
-        & a {
-            text-decoration: none;
+    // components from top to bottom of page
+    .navbox {
+        display: flex; // puts burger and logo beside each other instead of stacked
+        justify-content: space-between; // space between logo and burger
+        margin: 2em 0em 0em 1.5em;
+
+        & svg {
+            height: 1.5rem;
         }
+
+        & path {
+            fill: $Grayish-Violet;
+        }
+    }
+
+    // .working-gal {
+        
+    // }
+
+    .dropdown {
+        display: none; // default: hides the dropdown menu
+        position: absolute; // dropdown displays over existing content instead of pushing elements downwards
 
         font: {
-            size: 18px; // 1em
-            family: "Poppins", sans-serif;
-            weight: 300;
+            weight: 800;
         }
-    }
 
-    .navbox {
-        display: flex;
-    }
-
-    .text {
+        & .button {
+            padding: 1rem;
+        }
+        padding: 2rem;
         text-align: center;
-        margin: 0em 1em;
+        background-color: $Dark-Violet;
+        border-radius: 10px;
+        margin: 1rem;
+    }
+
+    .intro {
+        text-align: center;
+        margin: 0em 1em 4em;
 
         & h2 {
-            font-size: 2rem;
+            color: $Very-Dark-Blue;
+            line-height: 1em;
+            margin-bottom: 0.5em;
+
+            font: {
+                size: 2.5rem;
+                weight: 700;
+            }
         }
 
         & p {
-            line-height: 2rem;
-            padding: 0em 2em;
+            @include text;
+            margin-bottom: 2em;
+        }
+
+        .button {
+            padding: {
+                top: 0.8em;
+                bottom: 0.8em;
+            }
         }
     }
 
-    .working-gal {
-        margin-left: 1em;
-        overflow: hidden;
-        width: 100%;
-    }
-
     .shorten {
-        margin: 2em;
+        margin: 1em;
         text-align: center;
-        padding: 2em;
-        border-radius: 20px;
+        padding: 1.5em;
+        border-radius: 10px;
 
         background: {
             image: url(./images/bg-shorten-mobile.svg);
             repeat: no-repeat;
             color: $Dark-Violet;
-            size: 20em;
+            position: top right;
         }
 
         // text box
         & form input {
             border-radius: 10px;
+            display: inline-block;
             padding: 1em;
-
-            font: {
-                size: 1em;
-                color: $Grayish-Violet;
-                weight: 600;
-            }
+            @include text;
+            background-color: $BG-COLOUR;
+            font-family: "Poppins";
+            margin-bottom: 1em; // space between button and text box
         }
 
         // shorten it button
         & form div {
             @include button;
-            border-radius: 10px;
+            border-radius: 5px;
             color: white;
-            font-weight: 800;
+            padding: 0.7em;
+        }
+    }
+
+    .stats {
+        text-align: center;
+        margin: 4em 1em 1em;
+
+        & h2 {
+            @include heading;
+        }
+
+        & p {
+            @include text;
         }
     }
 
@@ -111,19 +185,13 @@ $Very-Dark-Violet: hsl(260, 8%, 14%);
         padding: 2em 1em;
         background-color: white;
 
-        font: {
-            weight: 500;
-        }
-
         & h2 {
             font-size: 1.5rem;
             color: $Very-Dark-Blue;
         }
 
         & p {
-            font-size: 1rem;
-            line-height: 1.6rem; // distance between lines of text
-            color: $Grayish-Violet;
+            @include text;
         }
     }
 
@@ -168,6 +236,9 @@ $Very-Dark-Violet: hsl(260, 8%, 14%);
         margin-top: 4em;
         color: white;
         text-align: center;
+        display: inline-block;
+        width: 100%;
+
         padding: {
             top: 4em;
             bottom: 4em;
@@ -177,12 +248,6 @@ $Very-Dark-Violet: hsl(260, 8%, 14%);
             image: url(./images/bg-boost-mobile.svg);
             repeat: no-repeat;
             color: $Dark-Violet;
-        }
-
-        .button {
-            @include button;
-            border-radius: 30px; // rounded sides only, not rounding top and bottom as well.
-            color: white;
         }
     }
 
@@ -210,6 +275,7 @@ $Very-Dark-Violet: hsl(260, 8%, 14%);
             }
 
             & a {
+                font-weight: 300;
                 padding: 0.5em; // space between links
                 color: $Gray;
             }

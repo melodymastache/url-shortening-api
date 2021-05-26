@@ -1,10 +1,11 @@
 {
   "name": "url-shortening-api",
   "version": "1.0.0",
-  "description": "- Further knowledge in CSS/Sass, reduce style redundancies - Review and practice API knowledge - Practive and further knowledge in JS - Implement promises",
-  "main": "index.js",
+  "description": "",
+  "main": "App.js",
   "scripts": {
-    "test": "npm test"
+    "scss": "node-sass --watch ./public/index.scss -o ./public/css",
+    "start": "node server.js"
   },
   "repository": {
     "type": "git",
@@ -15,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/melodymastache/url-shortening-api/issues"
   },
-  "homepage": "https://github.com/melodymastache/url-shortening-api#readme"
+  "homepage": "https://github.com/melodymastache/url-shortening-api#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
 }

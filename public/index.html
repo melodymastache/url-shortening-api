@@ -7,26 +7,46 @@
   <!-- displays site properly based on user's device -->
   <title>Frontend Mentor | Shortly URL shortening API Challenge</title>
   <!-- links to generated css file -->
-  <link href="output.css" rel="stylesheet" />
+  <link rel="stylesheet" href="./css/index.css">
+  <!-- jQuery import -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="../index.js"></script>
 </head>
 
 <body>
   <div class="navbox">
     <img src="images/logo.svg" alt="logo" />
+
+    <!-- burger logo -->
+    <div class="burger">
+      <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+        x="0px" y="0px" width="70px" height="90px" viewBox="0 0 92.833 92.833"
+        style="enable-background:new 0 0 92.833 92.833;" xml:space="preserve">
+        <path d="M89.834,1.75H3c-1.654,0-3,1.346-3,3v13.334c0,1.654,1.346,3,3,3h86.833c1.653,0,3-1.346,3-3V4.75
+			C92.834,3.096,91.488,1.75,89.834,1.75z" />
+        <path d="M89.834,36.75H3c-1.654,0-3,1.346-3,3v13.334c0,1.654,1.346,3,3,3h86.833c1.653,0,3-1.346,3-3V39.75
+			C92.834,38.096,91.488,36.75,89.834,36.75z" />
+        <path d="M89.834,71.75H3c-1.654,0-3,1.346-3,3v13.334c0,1.654,1.346,3,3,3h86.833c1.653,0,3-1.346,3-3V74.75
+			C92.834,73.095,91.488,71.75,89.834,71.75z" />
+      </svg>
+    </div>
+    <!-- end burger -->
+  </div>
+
+  <div class="dropdown">
     <a href="/" alt="features">Features</a>
     <a href="/" alt="pricing">Pricing</a>
     <a href="/" alt="resources">Resources</a>
-    <div class="shift-right">
-      <a href="/" alt="login">Login</a>
-      <a href="/" alt="sign-up"><span class="button">Sign Up</span></a>
-    </div>
+    <hr></hr>
+    <a href="/" alt="login">Login</a>
+    <a href="/" alt="sign-up" class="button">Sign Up</a>
   </div>
 
   <div class="working-gal">
-    <img src="images/illustration-working.svg" alt="person-at-desk" />
+    <img src="images/illustration-working.svg" />
   </div>
 
-  <div class="text">
+  <div class="text intro">
     <h2>More than just shorter links</h2>
 
     <p>Build your brand’s recognition and get detailed insights
@@ -37,12 +57,12 @@
 
   <div class="shorten">
     <form>
-      <input type="text" placeholder="Shorten a link here..."></input>
-      <div>Shorten It!</div>
+      <input class="textbox" type="text" placeholder="Shorten a link here..."></input>
+      <div id="shortsubmit">Shorten It!</div>
     </form>
   </div>
 
-  <div class="text">
+  <div class="stats">
     <h2>Advanced Statistics</h2>
     <p>Track how your links are performing across the web with our advanced statistics dashboard.</p>
   </div>
@@ -51,9 +71,9 @@
   <!-- BRAND FEATURE -->
   <div class="feature-icon" id="brand-icon"></div>
   <div class="feature">
-  <h2>Brand Recognition</h2>
-  <p>Boost your brand recognition with each click. Generic links don’t mean a thing. Branded links help instil
-    confidence in your content.</p>
+    <h2>Brand Recognition</h2>
+    <p>Boost your brand recognition with each click. Generic links don’t mean a thing. Branded links help instil
+      confidence in your content.</p>
   </div>
 
   <!-- VERTICAL BLUE LINE -->
